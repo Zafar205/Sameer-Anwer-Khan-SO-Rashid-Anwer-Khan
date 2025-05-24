@@ -1,0 +1,84 @@
+.customCheckbox {
+  display: block;
+  min-height: 20px;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+   -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+	
+}
+
+.customCheckbox .checkbox-material:before{
+    display: block;
+    position: absolute;
+    left: 0;
+    content: "";
+    background-color: rgba(0,0,0,.84);
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    z-index: 1;
+    opacity: 0;
+    margin: 0;
+    -webkit-transform: scale3d(2.3,2.3,1);
+    transform: scale3d(2.3,2.3,1);
+}
+
+
+.customCheckbox input[type=checkbox]:checked+.checkbox-material .check, .checkbox-default input[type=checkbox]:checked+.checkbox-material .check{
+    color: #4caf50;
+}
+.customCheckbox .checkbox-material .check:before {
+    position: absolute;
+    content: "";
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    display: block;
+    margin-top: -4px;
+    margin-left: 6px;
+    width: 0;
+    height: 0;
+    box-shadow: 0 0 0 0,0 0 0 0,0 0 0 0,0 0 0 0,0 0 0 0,0 0 0 0,0 0 0 0 inset;
+    -webkit-animation: checkbox-off .3s forwards;
+    animation: checkbox-off .3s forwards;
+}
+
+.customCheckbox input[type=checkbox]:checked+.checkbox-material .check:before {
+    box-shadow: 0 0 0 10px,10px -10px 0 10px,32px 0 0 20px,0 32px 0 20px,-5px 5px 0 10px,20px -12px 0 11px;
+    -webkit-animation: checkbox-on .3s forwards;
+    animation: checkbox-on .3s forwards;
+}
+
+.customCheckbox .checkbox-material .check {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    border-radius: 2px;
+    overflow: hidden;
+    z-index: 1;
+}
+.customCheckbox .checkbox-material {
+    vertical-align: middle;
+    position: relative;
+    top: 3px;
+}
+
+
+.customCheckbox input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    left: 0;
+    pointer-events: none;
+}
+
+   

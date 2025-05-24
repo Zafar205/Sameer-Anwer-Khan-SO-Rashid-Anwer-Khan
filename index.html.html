@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="./Content/FontsFamily.css">
+    
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    
+    <title id="div_title">Government of Sindh - eStamping Citizen Portal</title>
+    <script src="./Scripts/jquery-1.10.2.min.js"></script>
+    
+    
+    <link href="./Content/HomePage77ae.css?ver=2" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+    <link href="./Content/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="./Content/Materialize/materialize.css" rel="stylesheet" />
+    <script src="./Content/Materialize/materialize.min.js"></script>
+    <script src="./Scripts/masonry.js"></script>
+    <script src="./Scripts/Hammer.js"></script>
+    <link href="https://estamps.gos.pk/eStampCitizenPortal/Content/kendo/css?v=MngViPMfDqvTC0CSHa-0Ca7K5W0HilZLK3dq7LN9p-01" rel="stylesheet"/>
+
+    <script src="https://estamps.gos.pk/eStampCitizenPortal/bundles/kendo?v=EtsCfpp7QKg7DhGxBuYhXt78cREbEU6cmV_Tl-CpfCw1"></script>
+
+
+    <style>
+        .k-widget.k-window {
+            left: 30% !important;
+            right: 50% !important;
+            top: 185px !important;
+            height: 450px !important;
+        }
+
+        .k-window-action {
+            visibility: hidden;
+        }
+
+        .k-window div.k-window-content {
+            overflow: hidden;
+        }
+
+        .k-window-titlebar.k-header {
+            font-weight: bold; /*set font-weight to the titlebar*/
+        }
+    </style>
+    <style>
+        #mobileWarning {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding-top: 20%;
+            font-size: 24px;
+            z-index: 1000;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+
+        var token = sessionStorage.getItem('tokenKey');
+        var userName = sessionStorage.getItem('userName');
+        var userRolesList = sessionStorage.getItem('userRoles');
+        var forcefullyChangePasswordRole = "Forcefully Change Password";
+        var borAdminRole = "BOR Admin";
+        var eStampingSupportAdminNew = "eStamping Support Admin";
+
+
+        $(document).ready(function () {
+            debugger;
+            if (token != null && (userRolesList.indexOf(forcefullyChangePasswordRole) < 0)) {
+
+                if (userRolesList.indexOf('Shipping Company User') > -1) {
+                    
+                    $('#Admin2').show();                   
+                    $('#Admin1').hide();
+                    $("slider_1").show();
+                    $("#slider_1").show();
+                    $("#slider_2").show();
+                    $("#slider_3").show();
+                    $("#slider_4").remove();
+                    $("#slider_5").remove();
+                } else {
+                    $('#Admin1').show();
+                    $('#Admin2').hide();
+                    $("#slider_1").remove();
+                    $("#slider_2").remove();
+                    $("#slider_3").remove();
+                    $("#slider_4").show();
+                    $("#slider_5").show();
+                
+
+                }
+
+            }
+
+            function isMobileDevice() {
+                return /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
+            }
+
+            // Check if the user is on mobile
+            if (isMobileDevice()) {
+                // Hide the content of the page
+                $('#contentWeb').hide();
+
+                // Show the mobile warning message
+                $('#mobileWarning').show();
+            }
+
+        });
+
+    </script>
+    <div class="Header-container">
+
+       
+        <div class="Header-Bar" >
+            <div class="pull-left  contact">
+                <div class="left-icon-circle float-left iconic-circle" style="height:22px; width:20px; margin-left:0px;">
+                    <a href="https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/HomePage" class="social-text float-left fa fa-home" style="color: #428bca;"></a>
+                </div>
+                <div class="margin-text floating-left-text" id="helpLine2">For Any Query:</div>
+
+                <div class="margin-text left-icon-circle float-left" style="width: 13.359px; height:20px; "><i class="social-text fa fa-phone"></i></div>
+                <div class="margin-text floating-left-text" id="helpLine1">0800-77000 &nbsp; &nbsp; &nbsp; Email: info@estamps.gos.pk</div>
+                <div style="clear:both"></div>
+            </div>
+            <div class="pull-right" id="For_login">
+                <div class="floating-left-text">
+                  
+
+                    <a class="Header-Links" id="en_link" href="https://estamps.gos.pk/eStampCitizenPortal/Home/LandingPage">Member Login </a>
+                 
+
+
+                 
+                </div>
+                
+            </div>
+           
+        </div>
+    </div>
+    <div id="mobileWarning">
+        Mobile devices are not recommended for this website. Use a Laptop or PC to continue.
+    </div>
+    <div id="contentWeb"></div>
+
+    <div class="slider" id="slider_eng">
+        <img id="Logo-Estamp-en" class="img-responsive" style="padding-left:8px;" src="./Images/Logo-eStamp.png" />
+        <ul class="slides">
+            <li><img src="./Images/banner01-smallSindhNew.png" /></li>
+            <li><img src="./Images/banner03-smallSindh013.png" />></li>
+            <li><img src="./Images/banner04-smallSindh014.png" /></li>
+             <li><img src="./Images/banner01-smallSindh011.png" /></li>
+
+
+            
+           
+          
+            
+           
+        </ul>
+    </div>
+
+    <div class="slider" style="display:none;" id="slider_ur">
+        <img id="Logo-Estamp-ur" class="img-responsive" style="padding-left:8px;" src="./Images/Logo-eStamp-ur.png" />
+        <ul class="slides">
+            <li><img src="./Images/banner-ur-01.png" /></li>
+            <li><img src="./Images/banner-ur-02.png" /></li>
+            <li><img src="./Images/banner-ur-03.png" />></li>
+            <li><img src="./Images/banner-ur-04.png" /></li>
+            <li><img src="./Images/banner-ur-05.png" /></li>
+            <li><img src="./Images/banner-ur-06.png" /></li>
+            <li><img src="./Images/banner-ur-07.png" /></li>
+            <li><img src="./Images/banner-ur-08.png" /></li>
+            
+        </ul>
+    </div>
+
+    <div id="container-body">
+        <div class="grid" id="citizen1">
+            <div class="grid-item">
+                <div class="tab-clickable" id="challanForm" onclick="OpenTermsandConditions('AddChallan')">
+                    <img src="./Images/icon-challan32A.png"
+                         onmouseover="this.src = './Images/icon-challan32A-hoverSindh.png';" onmouseout="    this.src = './Images/icon-challan32A.png';" class="img-responsive" />
+                </div>
+                
+                <div class="text-container">
+                    <div class="text-heading" onclick="OpenTermsandConditions('AddChallan')"><a href="#" style="color: #333333;" id="generateChallan32ALbl">Challan Form No. 32-A</a></div>
+                    <div class="description" id="generateChallan32ADescription">Generate new Challan Form 32-A to pay Stamp Duty.</div>
+                </div>
+            </div>
+
+            <div class="grid-item" >
+                <div class="tab-clickable">
+                    <a href='AddChallan8dba.html?name=PayCVTandRegT&amp;vCount=547943'>
+                        <img src="./Images/digitalScanning-Reg.png"
+                             onmouseover="this.src = './Images/digitalScanning-Reg-hover.png';" onmouseout=" this.src = './Images/digitalScanning-Reg.png';" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="text-container">
+                    <div class="text-heading"><a href='https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/AddChallan?name=PayCVTandRegT&gvCount=547876' style="color: #333333;" id="ScanningFeeLbl">Digital Scanning Fee, Copying Fee and Duplicate Fee</a></div>
+                    <div class="description" id="payCVTRegFeeDescription">Generate and Pay Digital Scanning Fee, Copying Fee and Duplicate Fee Challan Form 32-A</div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="tab-clickable">
+                    <a href='AddChallan2d4c.html?name=MutationFee&amp;vCount=547943'>
+                        <img src="./Images/mutationFee-Reg.png"
+                             onmouseover="this.src = './Images/mutationFee-Reg-hover.png';" onmouseout="    this.src = './Images/mutationFee-Reg.png';" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="text-container">
+                    <div class="text-heading"><a href='https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/AddChallan?name=MutationFee&gvCount=547876' style="color: #333333;" id="mutationFeeLbl">Mutation Fee and Certified True Copy Fee</a></div>
+                    <div class="description" id="MutationFeeDescription">Generate and Pay Mutation Fee and Certified True Copy Fee Challan Form 32-A</div>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="tab-clickable">
+                    <a href='AddChallan8d96.html?name=RegFeeNew&amp;vCount=547943'>
+                        <img src="./Images/registrationFee-Reg.png"
+                             onmouseover="this.src = './Images/registrationFee-Reg-hover.png';" onmouseout="    this.src = './Images/registrationFee-Reg.png';" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="text-container">
+                    <div class="text-heading"><a href='https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/AddChallan?name=RegFeeNew&gvCount=547876' style="color: #333333;" id="registrationRegFeeLbl">Registration Fee</a></div>
+                    <div class="description" id="RegistrationFeeDescription">Generate and Pay Registration Fee Challan Form 32-A</div>
+                </div>
+            </div>
+
+            <div style="clear:both"></div>
+
+            <div class="grid-item">
+                <div class="tab-clickable">
+                    <a href='SearchChallan54eb.html?name=reprintchallan&amp;vCount=547943'>
+                        <img src="./Images/Sindh-2.png"
+                             onmouseover="this.src = './Images/Sindh-2-H.png';" onmouseout="this.src = './Images/Sindh-2.png';" class="img-responsive" />
+                    </a>
+                </div>
+                
+                <div class="text-container">
+                    <div class="text-heading"><a href='https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/SearchChallan?name=reprintchallan&vCount=547876' style="color: #333333;" id="reprintChallanLbl">Verify or Print Challan 32-A</a></div>
+                    <div class="description" id="reprintChallanDescription">Verify or Print existing Challan Form 32-A.</div>
+                </div>
+            </div>
+
+           
+            <div class="grid-item">
+                <div class="tab-clickable">
+                    <a href='AddChallan5a03.html?name=PayDeficient&amp;vCount=547943'>
+                        <img src="./Images/Sindh-4.png"
+                             onmouseover="this.src = './Images/Sindh-4-H.png';" onmouseout=" this.src='./Images/Sindh-4.png' ;" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="text-container">
+                    <div class="text-heading"><a href='https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/AddChallan?name=PayDeficient&vCount=547876' style="color: #333333;" id="payDeficiencyLbl">Pay Stamp Duty Deficiency or Penalty/Fine/Surcharge</a></div>
+                    <div class="description" id="payDeficiencyDescription">Pay stamp duty Deficiency or Penalty/Fine/Surcharge on e-Stamps.</div>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="tab-clickable">
+                    <a href="RateOfChallanViewbe11.html?name=PropertyDCValuation&amp;vCount=547943">
+                        <img src="./Images/Sindh-3.png"
+                             onmouseover="this.src = './Images/Sindh-3-H.png';" onmouseout="    this.src = './Images/Sindh-3.png';" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="text-container">
+                    <div class="text-heading"><a href="https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/RateOfChallanView?name=PropertyDCValuation&vCount=547876" style="color: #333333;" id="dcValuationLbl">Calculate Valuation Rate</a></div>
+                    <div class="description" id="dcValuationDescription">Calculate Valuation Rate of Your Land.</div>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="tab-clickable">
+                    <a href='VerifyStampb21e.html?name=verifystamp&amp;vCount=547943'>
+                        <img id="testtt" src="./Images/Sindh-5.png"
+                             onmouseover="this.src = './Images/Sindh-5-H.png';" onmouseout=" this.src='./Images/Sindh-5.png' ;" class="img-responsive" />
+                    </a>
+                </div>
+                <div class="text-container">
+                    <div class="text-heading"><a href='https://zafar205.github.io/ChallanVerification/' style="color: #333333;" id="verificationTrhoughWebLbl">Verification Through Web</a></div>
+                    <div class="description" id="verificationTrhoughWebDescription">Verify your e-Stamps.</div>
+                </div>
+            </div>
+       <div class="grid-item">
+            <div class="tab-clickable" id="challanForm" onclick="OpenTermsandConditions('AddChallanForAdhesiveStamps')">
+                <img src="./Images/icon-adheive-challan.jpg"
+                     onmouseover="this.src = './Images/icon-adhesive-challan-hover.jpg';" onmouseout=" this.src = './Images/icon-adheive-challan.jpg';" class="img-responsive" />
+            </div>
+            <div class="text-container">
+                <div class="text-heading" onclick="OpenTermsandConditions('AddChallanForAdhesiveStamps')"><a href="#" style="color: #333333;" id="generateChallan32AForAS">Challan Form No. 32-A (Adhesive Stamps)</a></div>
+                <div class="description" id="generateChallan32AForASDescription">Generate new Challan Form 32-A to buy Adhesive Stamps</div>
+            </div>
+        </div>
+           
+
+            
+
+            <!--Added By Nadeem Riaz -->
+            
+            
+            
+            
+            
+            <!--  ============================  -->
+            <!--Added By Momna Anam -->
+            
+            
+            <!--  ============================  -->
+            <!--Added By Nadeem Riaz -->
+            
+            <!--  ============================  -->
+          
+            
+        </div>
+
+        <label hidden id="AddChallanType"></label>
+    </div>
+    <div class="wrapper_logo_container" style="background-color:rgb(209, 211, 212) !important">
+        <center>
+            <div class="logo-container container" style="background-color:rgb(209, 211, 212) !important">
+                <div class="row" id="row-container-logo">                   
+                    <div class="col-md-1 pull-left" id="div_part_en" style="font-size: 20px; font-family: Arvo; /*color:#b7c1ba*/ color: #58585b; padding-top: 20px; "> <center><b id="div_partners">Partners</b></center></div>
+                    <div class="col-sm-1" id="div_part_ur" style="font-size: 20px; font-family: Arvo; display:none; float:right;/*color:#b7c1ba*/ color: #58585b; padding-top: 20px; "> <center><b id="div_partners_ur">Partners</b></center></div>
+                    <div class="col-md-3 description" style="margin-left:132px;">                       
+                            <a href="https://www.nbp.com.pk/index.aspx" target=_blank>
+                                <img src="./Images/NBP2.png" style="margin-top:13px;" class="img-responsive logo-image" />
+                            </a>                          
+                            <a href="BranchesList.html" target=_blank>
+                                <span style="font-size: 10px;float:left;margin-left:115px; font-family: Arvo; /*color:#b7c1ba*/ color:#58585b; align-content: center;"> <center id="branchesList"><b>List of All Branches</b></center></span>
+                             </a>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <a href="https://www.sindhbank.com.pk/" target=_blank style="margin-left:40px;">
+                            <img src="./Images/Sindh-bank-logo-colored.png" style="height:40px;margin-top:7px;margin-bottom:8px;" class="img-responsive logo-image" />
+                        </a>
+                        <a href="BranchesListForSindhBak.html" target=_blank style="margin-left:30px;margin-top:23px !important;">
+                            <span style="font-size: 10px;float:left;margin-left:65px; font-family: Arvo; /*color:#b7c1ba*/ color:#58585b; align-content: center;"> <center id="branchesList"><b>List of All Branches</b></center></span>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="https://www.bop.com.pk/Default.aspx" target=_blank>
+                            <img src="./Images/bankLogo-BOP.png" class="img-responsive logo-image" />
+
+                        </a>
+                        <a href="BranchesListForBOP.html" target=_blank style="margin-left:30px;margin-top:23px !important;">
+                            <span style="font-size: 10px;float:left;margin-left:65px; font-family: Arvo; /*color:#b7c1ba*/ color:#58585b; align-content: center;"> <center id="branchesList"><b>List of All Branches</b></center></span>
+                        </a>
+                    </div>
+
+                  
+                </div>
+            </div>
+        </center>
+    </div>
+
+    <div class="wrapper_footer_container" >
+        <div id="footer" class="container">
+            <div class="row" style="margin-bottom:15px !important;">
+                <center>
+                    <div class="col-md-4  tab-pane">
+                        <div class="text-heading-footer" id="aboutUsFooter" >About Us</div>
+                        <a href="https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/AboutUsForeStamping" target=_blank style="color:white !important;">
+                            <div class="tabs-footer col-lg-12" id="eStampingFooter">e-Stamping</div>
+                        </a>
+                        <a href="http://www.sindhzameen.gos.pk/" target=_blank style="color:white !important;">
+                            <div class="tabs-footer col-lg-12" id="boardOfRevFooter">Board Of Revenue</div>
+                        </a>       
+                        <a href="https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/VendorsList" target=_blank style="color:white !important;">
+                            <div class="tabs-footer col-lg-12" id="boardOfRevFooter">List of Vendors</div>
+                        </a>                       
+                    </div>
+                    
+                    <div class="col-md-4  tab-pane">
+                        <div class="text-heading-footer">Help</div>
+
+                        
+                        <div class="tabs-footer col-lg-12" style="cursor:text;" id="userGuideFooter"><a href="https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/UserGuid" target=_blank class="tabs-footer-without-bottom-border col-lg-12" style="color:white;">User Guide</a></div>
+                        <div class="tabs-footer col-lg-12" style="cursor:text;" id="judicialFooter"><a href="https://www.youtube.com/channel/UCVKb5fXpmHdb_ab5mI-mJfQ" target=_blank class="tabs-footer-without-bottom-border col-lg-12" style="color:white;">Helping Video(s)</a></div>
+                    </div>
+                    <div class="col-md-4  tab-pane">
+                        <div class="text-heading-footer" id="div_contactUs" >Contact Us</div>
+                        <div class="tabs-footer col-lg-12" style="cursor:text;pointer-events:none" id="emailFooter">Email: <span>info@estamps.gos.pk</span></div>
+                        
+                            
+                        <a href="https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/HelpFAQs" target=_blank style="color:white !important;">
+                            <div class="tabs-footer col-lg-12">FAQs</div>
+                        </a>
+                        
+                    </div>
+
+
+                </center>
+
+            </div>
+            <div id="shadow-line" style="color:white;"></div>
+        </div>
+
+    </div>
+
+    <div class="wrapper_footer_logo_container">
+        <div class="wrapper_logo_container_bottom">
+            <br />
+            <div id="logo-footer" class="logo-footer container">
+            </div>
+            <div class="footer-copyrights-text">
+                © Copyrights GoS<span style="margin-left:3px;" id="currentYear"></span> , All Rights Reserved
+            </div>
+
+            
+
+        </div>
+        <br />
+    </div>
+
+    <div id="termsAndConditionsWindow" style="display:none">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./Scripts/jquery-1.10.2.min.js"></script>
+
+<link href="./Content/bootstrap.css" rel="stylesheet" />
+<link href="./Content/HomePage.css" rel="stylesheet" />
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+<link href="./Content/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="./Content/Materialize/materialize.css" rel="stylesheet" />
+<script src="./Content/Materialize/materialize.min.js"></script>
+<script src="./Scripts/masonry.js"></script>
+<script src="./Scripts/Hammer.js"></script>
+<link href="https://estamps.gos.pk/eStampCitizenPortal/Content/kendo/css?v=MngViPMfDqvTC0CSHa-0Ca7K5W0HilZLK3dq7LN9p-01" rel="stylesheet"/>
+
+<script src="https://estamps.gos.pk/eStampCitizenPortal/bundles/kendo?v=EtsCfpp7QKg7DhGxBuYhXt78cREbEU6cmV_Tl-CpfCw1"></script>
+
+
+
+
+
+
+<div class="container">
+    <div class="row" style="padding-top: 20px;">
+        <div class="row">
+            <div class="col-md-12" id="div_trc">
+                <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif !important; word-spacing:0px !important">
+                    <strong>
+                        
+                        I hereby certify that the information being entered into the system is correct and valid as per the CNIC’s. Any incorrect information and the consequences their on will have no obligations on any Government department or agency providing the e-Stamp certificate.
+                    </strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="display:none;">
+                <audio id="englishAudio">
+                    
+                </audio>
+                <button class="btn btn-primary" id="englishAudioButton"><i class="fa fa-file-audio-o"></i>  English</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <img src="./Images/UrduDisc.png" class="img-rounded" width="439" height="133" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="display:none;">
+                <audio id="urduAudio">
+                    
+                </audio>
+                <button class="btn btn-primary" id="urduAudioButton"><i class="fa fa-file-audio-o"></i>  Urdu</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+   
+    $(document).ready(function () {
+
+        if (document.cookie == "_culture=ur") {
+            //$("#div_trc").css("direction", "rtl");
+
+
+        }
+
+    });
+
+    $('#englishAudioButton').click(function () {
+        if (document.getElementById('englishAudio').paused == false) {
+            document.getElementById('englishAudio').pause();
+        } else {
+            if (document.getElementById('urduAudio').paused == false) {
+                document.getElementById('urduAudio').pause();
+            }
+            document.getElementById('englishAudio').play();
+        }
+    });
+
+    $('#urduAudioButton').click(function () {
+        if (document.getElementById('urduAudio').paused == false) {
+            document.getElementById('urduAudio').pause();
+        } else {
+            if (document.getElementById('englishAudio').paused == false) {
+                document.getElementById('englishAudio').pause();
+            }
+            document.getElementById('urduAudio').play();
+        }
+    });
+
+</script>
+
+
+
+
+        <button class="btn btn-primary pull-right" type="button" style="margin-left:10px" onclick="disagreeDisclaimerButton()">Disagree</button>&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-default pull-right col-md-offset-2" type="button" id="agreeDisclaimerButton">Agree</button>
+    </div><script>
+	jQuery(function(){jQuery("#termsAndConditionsWindow").kendoWindow({"modal":true,"iframe":false,"draggable":true,"scrollable":true,"pinned":false,"title":"Disclaimer","resizable":false,"width":600,"height":400,"actions":["Close"]});});
+</script>
+        
+
+    <script>
+        $(function () {
+            $.ajaxSetup({
+                beforeSend: function (xhr) {
+                    var token = sessionStorage.getItem('tokenKey');
+                    if (token) {
+                        xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+                    }
+                }
+            });
+        });
+
+
+
+
+
+
+        $(document).keydown(function (event) {
+            if (event.keyCode == 123) { // Prevent F12
+                return false;
+            } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I 
+                return false;
+            }
+        });
+        $(document).on("contextmenu", function (e) {
+            e.preventDefault();
+        })
+
+        $(document).ready(function () {
+
+            var server_side_userName = "";
+           // alert(server_side_userName); 
+            console.log("Current Logged-In User : " + server_side_userName);
+            if (server_side_userName != "" && server_side_userName != null && server_side_userName != undefined) {
+                // User is logged in on server side.
+                // This might be the case
+
+                var server_side_token = "";
+                var server_side_userRoles = "";
+                console.log("Current Logged-In User Token : " + server_side_token);
+
+                var token = sessionStorage.getItem('tokenKey');
+                var userName = sessionStorage.getItem('userName');
+                var userRolesList = sessionStorage.getItem('userRoles');
+
+                if (userName == null || userName == "" || userName == undefined) // If Token is not defined on JS side, but defined on Server side
+                {
+                    console.log("Resetting JS userName");
+                    sessionStorage.setItem('userName', server_side_userName);
+                }
+
+                if (token == null || token == "" || token == undefined) // If Token is not defined on JS side, but defined on Server side
+                {
+                    console.log("Resetting JS Token");
+                    sessionStorage.setItem('tokenKey', server_side_token);
+                }
+
+                if (userRolesList == null || userRolesList == "" || userRolesList == undefined) // If Token is not defined on JS side, but defined on Server side
+                {
+                    console.log("Resetting JS Token");
+                    sessionStorage.setItem('userRoles', server_side_userRoles);
+                }
+
+            }
+            else {
+                // User is not logged in on server side
+                // make it logg off on client side too.
+                console.log("User is not logged in");
+                sessionStorage.removeItem('tokenKey');
+                sessionStorage.removeItem('userName');
+                sessionStorage.removeItem('userRoles');
+
+            }
+
+
+            var token = sessionStorage.getItem('tokenKey');
+            var userName = sessionStorage.getItem('userName');
+            var userRolesList = sessionStorage.getItem('userRoles');
+            var forcefullyChangePasswordRole = "Forcefully Change Password";
+            var borAdminRole = "BOR Admin";
+            var eStampingSupportAdminNew = "eStamping Support Admin";
+
+           // alert(userName); 
+
+
+
+
+
+            $('.slider').slider({ full_width: true });
+            $('.grid').masonry({
+                itemSelector: '.grid-item',
+                columnWidth: 330
+            });
+            var today = new Date();
+            var year = today.getFullYear();
+            $('#currentYear').html(year);
+
+            if (document.cookie == "_culture=ur")
+            {
+                $("#userGuideFooter").css("direction", "rtl");
+                $("#judicialFooter").css("direction", "rtl");
+                $("#div_contactUs").css("direction", "rtl");
+                $("#aboutUsFooter").css("direction", "rtl");
+                $("#generateChallan32ADescription").css("direction", "rtl");
+                $("#generateChallan32ADescription").css("width", "161px");
+                $("#reprintChallanDescription").css("direction", "rtl");
+
+            }
+
+        });
+
+        function OpenTermsandConditions(id) {
+            document.getElementById("AddChallanType").innerHTML = id;
+            $("#termsAndConditionsWindow").data("kendoWindow").center().open();
+        }
+
+        function disagreeDisclaimerButton() {
+            $("#termsAndConditionsWindow").data("kendoWindow").close();
+            if (document.getElementById('englishAudio').paused == false) {
+                document.getElementById('englishAudio').pause();
+            }
+            if (document.getElementById('urduAudio').paused == false) {
+                document.getElementById('urduAudio').pause();
+            }
+            document.getElementById('englishAudio').currentTime = 0;
+            document.getElementById('urduAudio').currentTime = 0;
+        }
+
+        
+
+        $('#agreeDisclaimerButton').click(function () {
+            debugger;
+            var id = document.getElementById("AddChallanType").innerHTML;
+            if (id == 'AddChallan') {
+                var urlAddChallan = './ChallanFormView/AddChallan?name=GenerateChallan&vCount=547943&agree=true';
+                if (window.location.href.indexOf("/eStampCitizenPortal") >= 0 && window.location.href.indexOf("ChallanFormView/Home") == -1) {
+                    urlAddChallan = 'https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/AddChallan?name=GenerateChallan&vCount=547876&agree=true';
+                }
+                window.location.href = urlAddChallan;
+            } else if(id == 'AddChallanForAdhesiveStamps'){
+                var urlAddChallan = '.https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/AddChallanForAdhesiveStamps?name=GenerateChallan&vCount=547876&agree=true';
+                if (window.location.href.indexOf("/eStampCitizenPortal") >= 0 && window.location.href.indexOf("ChallanFormView/Home") == -1) {
+                    urlAddChallan = 'https://estamps.gos.pk/eStampCitizenPortal/ChallanFormView/AddChallanForAdhesiveStamps?name=GenerateChallan&vCount=547876&agree=true';
+                }
+                window.location.href = urlAddChallan;
+            }
+            else if (id == 'AddChallanForCopyingFee') {
+                var urlAddChallan = './ChallanFormView/AddChallanForCopyingFee?name=GenerateChallan&vCount=547943&agree=true';
+                if (window.location.href.indexOf("/eStampCitizenPortal") >= 0 && window.location.href.indexOf("ChallanFormView/Home") == -1) {
+                    urlAddChallan = './eStampCitizenPortal/ChallanFormView/AddChallanForCopyingFee?name=GenerateChallan&vCount=547943&agree=true';
+                }
+                window.location.href = urlAddChallan;
+            }
+            else if (id == 'AddChallanFrankingMachine') {
+                var urlAddChallan = './ChallanFormView/AddChallanForFrankingMachine?name=GenerateChallan&userName=&vCount=547943&agree=true';
+                if (window.location.href.indexOf("/eStampCitizenPortal") >= 0 && window.location.href.indexOf("ChallanFormView/Home") == -1) {
+                    urlAddChallan = './eStampCitizenPortal/ChallanFormView/AddChallanForFrankingMachine?name=GenerateChallan&userName=&vCount=547943&agree=true';
+                }
+                window.location.href = urlAddChallan;
+            }
+            else if (id == 'AddChallanForWhitePaper') {
+                var urlAddChallan = './ChallanFormView/AddChallanForWhitePaper?name=GenerateChallan&vCount=547943&agree=true';
+                if (window.location.href.indexOf("/eStampCitizenPortal") >= 0 && window.location.href.indexOf("ChallanFormView/Home") == -1) {
+                    urlAddChallan = './eStampCitizenPortal/ChallanFormView/AddChallanForWhitePaper?name=GenerateChallan&vCount=547943&agree=true';
+                }
+                window.location.href = urlAddChallan;
+            }
+            else if (id == 'AddChallanForRefundApplication') {
+                var urlAddChallan = './ChallanFormView/GenerateRefundApplication';
+                if (window.location.href.indexOf("/eStampCitizenPortal") >= 0 && window.location.href.indexOf("ChallanFormView/Home") == -1) {
+                    urlAddChallan = './eStampCitizenPortal/ChallanFormView/GenerateRefundApplication';
+                }
+                window.location.href = urlAddChallan;
+            }
+        });
+
+    </script>
+
+    <script>
+
+        $(document).keydown(function (event) {
+            if (event.keyCode == 123) { // Prevent F12
+                return false;
+            } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+                return false;
+            }
+        });
+        $(document).on("contextmenu", function (e) {
+            e.preventDefault();
+        });
+
+    $(document).ready(function () {
+        debugger;
+        if (document.cookie == "_culture=ur") {
+            $("#helpLine").css("font-family", "MehrNastaliqWeb"); 
+            $("#helpLine").css("font-size", "14px");
+            $("#branchesList").css("font-family", "MehrNastaliqWeb");
+            $("#div_title").css("font-family", "MehrNastaliqWeb"); 
+            $("#div_partners_ur").css("font-family", "MehrNastaliqWeb");
+            $("#div_part_en").hide();
+            $("#div_part_ur").show();
+            $("#slider_eng").hide();
+            $("#slider_ur").show();
+            $("#onlinepayDescription").css("direction", "rtl");
+            //$("#en_link").show()
+            //$("#ur_link").hide()
+            //$("#homeIcon").css("font-family","","important");
+        }
+        else {
+            //$("#en_link").hide()
+            //$("#ur_link").show()
+        }
+
+
+    });
+
+    function englishToUrdu_HomePage() {
+        debugger;
+        sessionStorage["currentLanguage"] = "Urdu";
+        $("#languageTranslateLink").html("English");
+        $('#generateChallan32ALbl').html('<span style="font-family:MehrNastaliqWeb ;  font-size:120%;">بنائیں A-32 نیا چالا ن</span>');
+        $('#generateChallan32ADescription').html('<span style="font-family:MehrNastaliqWeb;  font-size:120%; text-align: right;">اسٹا مپ ڈیو ٹی،سی وی ٹی یا ر جسٹریشن فیس ادا کرنے کیلئے نیا چالا ن  فارم بنا ئیں</span>');
+        $('#payCVTRegFeeLbl').html('<span style="font-family:MehrNastaliqWeb;  font-size:120%;">سی وی ٹی /رجسٹریشن کی ادائیگی</span>');
+        $('#payCVTRegFeeDescription').html('<span style="font-family:MehrNastaliqWeb;  font-size:120%;">سی وی ٹی، رجسٹریشن موازنہ فیس یا موجودہ چالان فارم پر ان کی کمی اداکریں </span>');
+        $('#dcValuationLbl').html('<span style="font-family:MehrNastaliqWeb ;  font-size:120%;">ڈی سی ویلیو کا تخمینہ لگانا</span>');
+        $('#dcValuationDescription').html('<span style="font-family:MehrNastaliqWeb;  font-size:120%;">اپنی زمین کی ڈی سی قیمت کا حساب لگائیں</span>');
+        $('#reprintChallanLbl').html('<span style="font-family:MehrNastaliqWeb ;  font-size:120%;">چالان کو دوبارہ پرنٹ کرنا</span>');
+        $('#reprintChallanDescription').html('<span style="font-family:MehrNastaliqWeb;  font-size:120%;"> تصدیق کریں یا دوبارہ چالان پرنٹ کریں</span>');
+        $('#payDeficiencyLbl').html('<span style="font-family:MehrNastaliqWeb; font-size:120%;">کم تخمینی کے بقا یا جات /  جرمانہ کی ادائیگی </span>');
+        $('#payDeficiencyDescription').html('<span style="font-family:MehrNastaliqWeb; font-size:120%;">اسٹامپ پر اسٹامپ ڈیوٹی کی کمی یا کفارہ ادا کریں</span>');
+        $('#verificationTrhoughWebLbl').html('<span style="font-family:MehrNastaliqWeb; font-size:120%;">تصدیق بذریعہ ویب سائٹ</span>');
+        $('#verificationTrhoughWebDescription').html('<span style="font-family:MehrNastaliqWeb;  font-size:120%;">اپنےاسٹامپ کی توثیق کریں</span>');
+        $("#helpLine").html('<b style="font-family:MehrNastaliqWeb;">ہیلپ لائن:</b> ' + ' <span>8100-08000</span>');
+        $('#eStampingFooter').html('<span style="font-family:MehrNastaliqWeb;">ای ۔اسٹامپ</span>');
+        $('#boardOfRevFooter').html('<span style="font-family:MehrNastaliqWeb;">بورڈ آف ریونیو</span>');
+        $("#userGuideFooter").html('<span style="font-family:MehrNastaliqWeb;">(</span><span style="font-family:MehrNastaliqWeb;"> صارف گائیڈ </span>(<a href="./UserGuide/e-Stamping_UserGuide_v1.0_(Citizen_Urdu).pdf" target=_blank class="tabs-footer-without-bottom-border col-lg-12" style="color:white; font-family:MehrNastaliqWeb;">اردو</a>,<a href="./UserGuide/e-Stamping_UserGuide_v1.0_(Citizen_Eng).pdf" target=_blank class="tabs-footer-without-bottom-border col-lg-12" style="color:white;font-family:MehrNastaliqWeb;">انگریزی</a>');
+        $('#judicialFooter').html('<span style="font-family:MehrNastaliqWeb;">(</span><span style="font-family:MehrNastaliqWeb;">جوڈیشل </span>(<a href="https://www.youtube.com/channel/UCo6oliHovpytlLyn0kBbolQ" target=_blank class="tabs-footer-without-bottom-border col-lg-12" style="color:white; font-family:MehrNastaliqWeb;">ویڈیو</a>,<a href="./UserGuide/e-Stamping_UserGuide_v1.0_(Judicial Citizen_Eng).pdf" target=_blank class="tabs-footer-without-bottom-border col-lg-12" style="color:white; font-family:MehrNastaliqWeb;"> گائیڈ </a>');
+        $('#emailFooter').html('<span>info.es@punjab.gov.pk</span> :<span style="font-family:MehrNastaliqWeb;"> ای میل</span>');
+
+    }
+    function urduToEnglish_HomePage() {
+        sessionStorage["currentLanguage"] = "English";
+        $("#languageTranslateLink").html('<span style="font-family:MehrNastaliqWeb;" >اردو</span>');
+        $('#generateChallan32ALbl').html('Generate Challan 32-A');
+        $('#generateChallan32ADescription').html('Generate new Challan Form 32-A to pay Stamp Duty, CVT or Registration Fee.');
+        $('#payCVTRegFeeLbl').html('Pay CVT, Registration or Comparison Fee');
+        $('#payCVTRegFeeDescription').html('Pay CVT, Registration, Comparison Fee or their deficiency on existing Challan Form 32-A.');
+        $('#dcValuationLbl').html('Calculate DC Valuation');
+        $('#dcValuationDescription').html('Calculate DC Value of your land.');
+        $('#reprintChallanLbl').html('Re-print Challan 32-A');
+        $('#reprintChallanDescription').html('Verify or Re-print existing Challan Form 32-A.');
+        $('#payDeficiencyLbl').html('Pay Deficiency/Penalty');
+        $('#payDeficiencyDescription').html('Pay stamp duty Deficiency or Penalty on e-Stamps.');
+        $('#verificationTrhoughWebLbl').html('Verification Through Web');
+        $('#verificationTrhoughWebDescription').html('Verify your e-Stamps.');
+        $("#helpLine").html('HELP LINE: 08000-8100');
+        $('#eStampingFooter').html('e-Stamping');
+        $('#boardOfRevFooter').html('Board Of Revenue');
+        $("#userGuideFooter").html('User Guide (<a href="./UserGuide/e-Stamping_UserGuide_v1.0_(Citizen_Urdu).pdf" target=_blank class="tabs-footer-without-bottom-border col-lg-12" style="color:white;">Urdu</a>,<a href="./UserGuide/e-Stamping_UserGuide_v1.0_(Citizen_Eng).pdf" target=_blank class="tabs-footer-without-bottom-border col-lg-12" style="color:white;">English</a>)');
+        $('#judicialFooter').html('Judicial (<a href="https://www.youtube.com/channel/UCo6oliHovpytlLyn0kBbolQ" target=_blank class="tabs-footer-without-bottom-border col-lg-12" style="color:white;">Video</a>,<a href="./UserGuide/e-Stamping_UserGuide_v1.0_(Judicial Citizen_Eng).pdf" target=_blank class="tabs-footer-without-bottom-border col-lg-12" style="color:white;">Guide</a>)');
+        $('#emailFooter').html('Email: <span>info.es@punjab.gov.pk</span>');
+    }
+
+    function changeLanguage() {
+        
+        //currentLanguage = $("#languageTranslateLink").text();
+        //if (currentLanguage == "اردو") {
+        //    englishToUrdu_HomePage();
+        //}
+        //else {
+        //    urduToEnglish_HomePage();
+        //}
+        
+    }
+    </script>
+
+</body>
+
+<!-- Mirrored from estamps.gos.pk/eStampCitizenPortal/ChallanFormView/HomePage by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 May 2025 12:27:44 GMT -->
+</html>
